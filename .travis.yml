@@ -10,5 +10,4 @@ install:
   - pip3 install urllib3==1.26.15
 
 script:
-  - py.test -v --color=yes --exitfirst --showlocals --durations=5
   - pytest test_demo.py
