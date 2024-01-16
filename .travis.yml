@@ -7,6 +7,7 @@ install:
   - pip3 install pytest
   - pip3 install selenium
   - pip3 install webdriver-manager
+  - pip3 install urllib3
 
 script:
   - py.test -v --color=yes --exitfirst --showlocals --durations=5
