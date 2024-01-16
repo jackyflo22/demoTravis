@@ -9,5 +9,18 @@ install:
   - pip3 install webdriver-manager
   - pip3 install urllib3==1.26.15
 
+  chrome:
+    image: selenium/node-chrome:latest
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - START_XVFB=false
+      - NODE_MAX_SESSION=1
+      - NODE_MAX_INSTANCES=1
+
 script:
   - pytest test_demo.py
