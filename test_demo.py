@@ -1,7 +1,8 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+from Driver import Driver
+
+driver = Driver().get_webdriver_instance()
 
 
 class TestItemClass:
