@@ -3,15 +3,6 @@ google-auth-httplib2==0.1.0
 google-auth-oauthlib==0.4.6
 pytest
 pytest-parallel
-pytest-xdist==3.3.1
-python-dotenv==0.10.3
-pylint==2.3.1
-pytest-json ==0.4.0
-selenium==4.10
-pytz==2019.1
-pytest_testrail_appetize==1.0.2
-pytest-html==3.2.0
-pytest-aggreport==0.1.5
-pytest-timeout==2.1.0
+selenium
 webdriver-manager==4.0.0
 urllib3~=1.26.16
