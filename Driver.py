@@ -29,7 +29,7 @@ class Driver:
         options.add_argument("--disable-dev-shm-usage")  # ignore shm usage (Linux related config)
         options.add_argument("--ignore-urlfetcher-cert-requests")  # ignore URL cert request fetch
 
-        if config.RUN_REMOTE == 'False':
+        if config.RUN_REMOTE == 'True':
             options.add_argument('--disable-gpu')
             options.add_argument("--headless")
             driver = webdriver.Chrome(
