@@ -32,7 +32,7 @@ class Driver:
         if config.RUN_REMOTE == 'True':
             options.add_argument('--disable-gpu')
             options.add_argument("--headless")
-            driver = webdriver.Remote(
+            driver = webdriver.Chrome(
                 options=options
             )
             driver.maximize_window()
