@@ -7,7 +7,7 @@ before_install:
   ⋮
 
 python:
-  - "3.6"
+  - "3.9"
 
 install:
   - pip3 install -r requirements.txt
