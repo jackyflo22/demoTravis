@@ -34,8 +34,7 @@ class Driver:
             options.add_argument("--headless")
             driver = webdriver.Remote(
                 command_executor=config.SELENIUM_GRID_HUB,
-                options=options,
-                file_detector=LocalFileDetector()  # needed for tests that upload files
+                options=options
             )
             driver.maximize_window()
         else:
