@@ -23,6 +23,7 @@ python:
 install:
   - pip3 install pytest
   - pip3 install selenium
+  - pip3 install webdriver-manager
   - pip3 install urllib3==1.26.15
 
 script:
