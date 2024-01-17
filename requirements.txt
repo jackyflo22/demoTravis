@@ -4,5 +4,5 @@ google-auth-oauthlib==0.4.6
 pytest
 pytest-parallel
 selenium
-webdriver-manager==4.0.0
+webdriver-manager
 urllib3~=1.26.16
