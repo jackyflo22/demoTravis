@@ -33,7 +33,6 @@ class Driver:
             options.add_argument('--disable-gpu')
             options.add_argument("--headless")
             driver = webdriver.Remote(
-                command_executor=config.SELENIUM_GRID_HUB,
                 options=options
             )
             driver.maximize_window()
