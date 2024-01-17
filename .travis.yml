@@ -1,6 +1,18 @@
 language: python
 dist: trusty
-os: osx
+
+- os: osx
+  osx_image: xcode9.4
+  language: generic
+  env: TOXENV=py36
+  addons:
+    homebrew:
+      # update: true
+      packages: python3.6
+  before_install:
+    - pip3 install virtualenv
+    - virtualenv -p python3 ~/venv
+    - source ~/venv/bin/activate
 
 addons:
   chrome: stable
@@ -10,7 +22,7 @@ before_install:
 - sudo apt-get install python3
 
 python:
-  - "3.9"
+  - "3.6"
 
 install:
   - pip3 install pytest
