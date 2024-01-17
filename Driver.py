@@ -29,23 +29,8 @@ class Driver:
         options.add_argument("--disable-dev-shm-usage")  # ignore shm usage (Linux related config)
         options.add_argument("--ignore-urlfetcher-cert-requests")  # ignore URL cert request fetch
 
-        if config.RUN_REMOTE == 'True':
-            options.add_argument('--disable-gpu')
-            options.add_argument("--headless")
-            driver = webdriver.Chrome(
-                options=options
-            )
-            driver.maximize_window()
-        else:
-            if config.BROWSER_TYPE.lower() == 'firefox':
-                service = GeckoService(GeckoDriverManager().install(), log_path=os.devnull)
-                driver = webdriver.Firefox(service=service, options=options)
-            else:
-                service = ChromeService(ChromeDriverManager().install())
-                driver = webdriver.Chrome(service=service, options=options, keep_alive=True)
 
-            if config.OPEN_BROWSER_WINDOW_ON_MAIN_DISPLAY == "True":
-                driver.set_window_position(0, 0)
-            driver.maximize_window()
+        service = ChromeService(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=options, keep_alive=True)
 
         return driver
