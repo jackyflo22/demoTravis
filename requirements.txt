@@ -1,0 +1,22 @@
+google-api-python-client==2.23.0
+google-auth-httplib2==0.1.0
+google-auth-oauthlib==0.4.6
+pytest==7.3.1
+pytest-parallel==0.1.1
+pytest-xdist==3.3.1
+requests==2.28
+python-dotenv==0.10.3
+pylint==2.3.1
+factory-boy==2.12.0
+pytest-json ==0.4.0
+selenium==4.10
+pytz==2019.1
+pytest_testrail_appetize==1.0.2
+pytest-html==3.2.0
+pytest-aggreport==0.1.5
+pytest-timeout==2.1.0
+webdriver-manager==4.0.0
+axe-selenium-python==2.1.6
+marshmallow==3.19.0
+Faker~=19.2.0
+urllib3~=1.26.16
