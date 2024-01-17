@@ -1,4 +1,18 @@
 language: python
+dist: trusty
+sudo: false
+
+addons:
+  chrome: stable
+  apt:
+    packages:
+      - chromium-chromedriver
+
+before_script:
+  # include ChromeDriver in PATH
+  - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
+  # start Chrome and listen on localhost
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 python:
   - "3.9"
@@ -8,30 +22,6 @@ install:
   - pip3 install selenium
   - pip3 install webdriver-manager
   - pip3 install urllib3==1.26.15
-
-services:
-  selenium-hub:
-    image: selenium/hub:latest
-    container_name: selenium-hub
-    ports:
-      - "4444:4444"
-    environment:
-      - GRID_MAX_SESSION=10
-      - GRID_BROWSER_TIMEOUT=3000
-      - GRID_TIMEOUT=3000
-
-  chrome:
-    image: selenium/node-chrome:latest
-    volumes:
-      - /dev/shm:/dev/shm
-    depends_on:
-      - selenium-hub
-    environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
-      - START_XVFB=false
-      - NODE_MAX_SESSION=1
-      - NODE_MAX_INSTANCES=1
 
 script:
   - pytest test_demo.py
