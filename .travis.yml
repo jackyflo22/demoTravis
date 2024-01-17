@@ -9,13 +9,12 @@ before_install:
   - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 
 python:
-  - "3.9"
+  - "3.9-dev"
 
 install:
   - pip3 install pytest
   - pip3 install selenium
-  - pip3 install webdriver-manager
   - pip3 install urllib3==1.26.15
 
 script:
-  - pytest test_demo.py
+  - pytest
